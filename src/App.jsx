@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
 import Product from "./pages/Product";
-import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Footer from "./components/Footer";
 //images
@@ -34,7 +33,6 @@ const App = () => {
           <Route path="/product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>
-          <Route path="/cart-page" element={<Cart />} />
           <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />

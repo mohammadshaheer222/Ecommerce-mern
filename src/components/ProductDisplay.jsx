@@ -7,7 +7,7 @@ import { MdStar } from "react-icons/md";
 import { ShopContext } from "../Context/ShopContext";
 
 const ProductDisplay = ({ product }) => {
-  const { addToCart } = useContext(ShopContext);
+  const { increment } = useContext(ShopContext);
   return (
     <section>
       <div className="flex flex-col gap-14 xl:flex-row">
@@ -75,7 +75,7 @@ const ProductDisplay = ({ product }) => {
             <div className="flex flex-col gap-y-3 mb-4 max-w-[555px]">
               <button
                 onClick={() => {
-                  addToCart(product.id);
+                  increment(product.id);
                 }}
                 className="btn-dark bg-transparent text-black ring-1 ring-black py-2 tracking-widest hover:bg-black hover:text-white"
               >

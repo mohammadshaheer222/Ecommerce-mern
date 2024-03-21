@@ -6,7 +6,4 @@
     .btn-dark {
       @apply bg-black text-white rounded-md;
     }
-    /* .btn-white {
-      @apply bg-white text-dark rounded-md;
-    } */
   }

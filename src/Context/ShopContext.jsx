@@ -11,17 +11,21 @@ const getDefault = () => {
   }
   return cart;
 };
+
 const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefault());
-  console.log(cartItems);
 
-  const addToCart = (itemId) => {
+  const increment = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
   };
 
-  const removeCart = (itemId) => {
+  const decrement = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
+
+  const removeCart = (itemId) => {
+    setCartItems((prev)=> ({...prev, [itemId]: prev[itemId]=0}))
+  }
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
@@ -35,17 +39,31 @@ const ShopContextProvider = (props) => {
     }
     return totalAmount;
   };
+
+  const getSingleCartItem = (itemId) => {
+    return cartItems[itemId];
+  }
+
   const getTotalCartItem = () => {
     let totalItem = 0;
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
-        totalItem +=  cartItems[item];
+        totalItem += cartItems[item];
       }
     }
     return totalItem;
   };
 
-  const contextValue = { all_products, cartItems, addToCart, removeCart, getTotalCartAmount, getTotalCartItem };
+  const contextValue = {
+    all_products,
+    cartItems,
+    increment,
+    decrement,
+    removeCart,
+    getTotalCartAmount,
+    getSingleCartItem,
+    getTotalCartItem,
+  };
 
   return (
     <ShopContext.Provider value={contextValue}>
