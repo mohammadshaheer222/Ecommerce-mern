@@ -5,7 +5,7 @@ const RelatedProducts = () => {
     return(
         <section className="bg-gray-100 xl:px-44">
             <div className="px-4 md:px-8 py-16 ">
-                <h3 className="text-4xl md:text-6xl font-bold text-center mb-6">Popular Products</h3>
+                <h3 className="text-4xl md:text-6xl font-bold text-center mb-6">Related Products</h3>
                 <hr className="h-[3px] mx-auto md:w-1/2 bg-gradient-to-l from-transparent via-gray-500 to-transparent mb-16 text-center "/>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
                     {POPULAR.map((item) => (

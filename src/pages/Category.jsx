@@ -13,12 +13,12 @@ const Category = ({ category, banner }) => {
           <h1>
             <span className="font-bold">Showing 1-12</span> out of 36 products
           </h1>
-          <div className="flex items-center justify-center gap-x-2 py-1 px-3 rounded-full bg-black text-white ring-1">
-            Sort by <MdOutlineKeyboardArrowDown />
+          <div className="flex items-center  gap-x-2 py-1 px-3 rounded-full bg-black text-white ">
+            Sort <MdOutlineKeyboardArrowDown />
           </div>
         </div>
         {/* container */}
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 xl:px-44">
+        <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 xl:px-44">
           {all_products.map((item) => {
             if (category === item.category) {
               return (

@@ -1,15 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import Navbar from "./Navbar";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { AiOutlineUser } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 
 import logo from "/src/assets/logo.svg";
 import logout from "/src/assets/logout.svg";
+import { ShopContext } from "../Context/ShopContext";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const { getTotalCartItem } = useContext(ShopContext);
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
@@ -45,7 +47,7 @@ const Header = () => {
               <FiShoppingCart size={24} />
             </span>
             <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
-              0
+              {getTotalCartItem()}
             </span>
           </NavLink>
           <NavLink
